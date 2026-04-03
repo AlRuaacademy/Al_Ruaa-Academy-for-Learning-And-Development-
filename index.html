@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Ruaa Academy | سجل الآن</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700&display=swap');
+
+        :root {
+            --primary: #1a3c5e;
+            --secondary: #d4af37;
+            --danger: #e74c3c;
+            --whatsapp: #25d366;
+            --bg: #f8fafc;
+        }
+
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; }
+
+        /* شريط العرض والعداد */
+        .promo-bar {
+            background: var(--danger);
+            color: white;
+            text-align: center;
+            padding: 12px 5%;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .timer-container {
+            display: flex;
+            gap: 10px;
+            direction: ltr;
+        }
+
+        .timer-unit {
+            background: rgba(0,0,0,0.3);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            min-width: 40px;
+        }
+
+        /* الهيدر */
+        header { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-size: 1.6rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--secondary); }
+
+        .hero {
+            background: linear-gradient(rgba(26, 60, 94, 0.9), rgba(44, 94, 143, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        /* كرت الكورس */
+        .container { padding: 40px 5%; display: flex; justify-content: center; }
+        .course-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 550px;
+            width: 100%;
+            border-top: 6px solid var(--secondary);
+        }
+
+        .course-body { padding: 35px; }
+        .discount-badge {
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid #ffeeba;
+        }
+
+        .price-info {
+            font-size: 1.4rem;
+            color: var(--danger);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* أزرار التواصل */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--whatsapp);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background: #1eb954;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #777;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .promo-bar { font-size: 0.9rem; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="promo-bar">
+        <span>⏰ ينتهي التخفيض خلال:</span>
+        <div class="timer-container" id="timer">
+            <div class="timer-unit" id="h">40</div>
+            <span>:</span>
+            <div class="timer-unit" id="m">00</div>
+            <span>:</span>
+            <div class="timer-unit" id="s">00</div>
+        </div>
+        <span>(سجل الآن واحجز مقعدك)</span>
+    </div>
+
+    <header>
+        <a href="#" class="logo">Al-Ruaa <span>Academy</span></a>
+        <div style="color: var(--primary); font-weight: 500;"><i class="fas fa-phone-alt"></i> +12896871234</div>
+    </header>
+
+    <section class="hero">
+        <h1>كورس اللغة الإنجليزية (أونلاين مباشر)</h1>
+        <p>تعلم الإنجليزية بنظام الـ One-to-One مع أفضل المدربين</p>
+    </section>
+
+    <div class="container">
+        <div class="course-card">
+            <div class="course-body">
+                <div class="discount-badge">
+                    <i class="fas fa-gift"></i> خصم خاص لمن يسجل خلال الأسبوعين القادمين!
+                </div>
+                
+                <h2 style="color: var(--primary); margin-top: 0;">تفاصيل العرض الحصري</h2>
+                <div class="price-info">تخفيضات تصل إلى 25% على الكورس الفردي</div>
+                
+                <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--whatsapp);"></i> حصص فردية خاصة بكل طالب.</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--whatsapp);"></i> تحديد المواعيد التي تناسب وقتك.</li>
+                    <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--whatsapp);"></i> اختبار تحديد مستوى مجاني (Zoom).</li>
+                </ul>
+
+                <a href="https://wa.me/12896871234?text=أهلاً أكاديمية الرؤى، أود الاستفسار عن كورس اللغة الإنجليزية والحصول على خصم التسجيل المحدود" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                    تحدث معنا عبر واتساب
+                </a>
+                
+                <p class="footer-note">* سيقوم فريق العمل بالرد عليك فوراً لتحديد موعد المحاضرة المجانية.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // برمجة العداد التنازلي
+        function updateCountdown() {
+            let totalSeconds = 40 * 60 * 60; // 40 ساعة بالثواني
+
+            const hElement = document.getElementById('h');
+            const mElement = document.getElementById('m');
+            const sElement = document.getElementById('s');
+
+            const timerInterval = setInterval(() => {
+                let hours = Math.floor(totalSeconds / 3600);
+                let minutes = Math.floor((totalSeconds % 3600) / 60);
+                let seconds = totalSeconds % 60;
+
+                hElement.innerText = hours < 10 ? '0' + hours : hours;
+                mElement.innerText = minutes < 10 ? '0' + minutes : minutes;
+                sElement.innerText = seconds < 10 ? '0' + seconds : seconds;
+
+                if (totalSeconds <= 0) {
+                    totalSeconds = 40 * 60 * 60; // إعادة الضبط تلقائياً
+                } else {
+                    totalSeconds--;
+                }
+            }, 1000);
+        }
+
+        window.onload = updateCountdown;
+    </script>
+
+</body>
+</html>
